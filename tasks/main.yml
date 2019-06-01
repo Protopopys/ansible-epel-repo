@@ -1,4 +1,8 @@
 ---
+- name: EPEL | Getting facts
+  setup:
+    filter: ansible_*
+
 - name: EPEL | Check if EPEL repo is already configured
   stat:
     path: "{{ epel_repo_file_path }}"

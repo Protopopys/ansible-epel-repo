@@ -2,9 +2,5 @@
 - name: Converge
   hosts: all
   gather_facts: false
-  pre_tasks:
-    - name: Getting facts
-      setup:
-        filter: ansible_*
   roles:
-    - role: ansible-epel-release
+    - role: ansible-epel-repo
