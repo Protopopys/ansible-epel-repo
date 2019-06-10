@@ -1,0 +1,16 @@
+---
+language: python
+python:
+  - "2.7"
+  - "3.6"
+services:
+  - docker
+install:
+  - pip install testinfra molecule docker
+before_script:
+  - docker pull centos:6
+  - docker pull centos:7
+script:
+  - molecule --version
+  - ansible --version
+  - molecule test
